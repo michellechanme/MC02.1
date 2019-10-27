@@ -1,0 +1,310 @@
+@font-face {
+  font-family: "Aktiv Grotesk";
+  /* font-weight: 500; */
+  src: local("AktivGrotesk"), local("AktivGrotesk-Medium"),
+    url(/AktivGrotesk/aktivgrotesk-medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Aktiv Grotesk";
+  font-weight: 300;
+  src: local("AktivGrotesk"), local("AktivGrotesk-Regular"),
+    url(/AktivGrotesk/aktivgrotesk-regular.ttf) format("woff");
+}
+
+@font-face {
+  font-family: "Apercu Mono";
+  src: local("Apercu"), local("Apercu-Mono"),
+    url(/Apercu/apercu-mono.woff) format("woff");
+}
+
+.App {
+}
+
+body {
+  margin: 0;
+}
+
+.BreadcrumbsContainer {
+  margin-top: 10vh;
+}
+
+.Breadcrumbs {
+  font-family: "Apercu Mono", monospace;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 28px;
+  color: #222;
+}
+
+.Breadcrumbs:hover {
+  background: #fffc11;
+}
+
+.Nav > p {
+  font-family: "Aktiv Grotesk", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 31.5px;
+  color: #222;
+  margin: 0;
+}
+
+.Link {
+  margin-right: 48px;
+  font-family: "Apercu Mono", monospace;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 24px;
+  color: #777;
+  text-decoration: none;
+}
+
+.Link:hover,
+.InlineLink:hover {
+  background: #fffc11;
+}
+
+a {
+  text-decoration: none;
+  color: #777;
+}
+
+.CenterContainer {
+  display: flex;
+  margin-right: 64px;
+  margin-left: 64px;
+  justify-content: center;
+}
+
+.Container {
+  max-width: 1200px;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ---- HERO ---- */
+
+.HeroContainer {
+  height: 100vh;
+}
+
+.TitleA {
+  font-family: "Aktiv Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 83px;
+  letter-spacing: -0.03em;
+  color: #222;
+  padding-top: 20vh;
+
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+
+.TitleB {
+  font-family: "Aktiv Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 83px;
+  letter-spacing: -0.03em;
+  color: #222;
+
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+.ScrollIndicator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #9fa6ad;
+  border-radius: 50px;
+  width: 24px;
+  height: 48px;
+  position: absolute;
+  bottom: 10vh;
+
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.MovingDot {
+  display: flex;
+  margin-top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 6px;
+  background-color: #9fa6ad;
+  -webkit-animation: movingDot 2s infinite; /* Safari 4+ */
+  -moz-animation: movingDot 2s infinite; /* Fx 5+ */
+  -o-animation: movingDot 2s infinite; /* Opera 12+ */
+  animation: movingDot 2s infinite; /* IE 10+, Fx 29+ */
+  transition: ease-in-out;
+}
+
+@keyframes movingDot {
+  from {
+    margin-top: 8px;
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    margin-top: 32px;
+    opacity: 0;
+    scale: 0.5;
+  }
+}
+
+@-webkit-keyframes movingDot {
+}
+
+/* ---- Projects ---- */
+
+.ProjectsGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 64px;
+  grid-row-gap: 64px;
+  margin-top: 40px;
+}
+
+img {
+  width: 100%;
+}
+
+.ProjectAsset {
+  margin-top: 48px;
+  margin-bottom: 120px;
+}
+
+.Description {
+  font-family: "Aktiv Grotesk", serif;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 34px;
+  color: #777;
+  margin-top: 12px;
+  width: 60%;
+}
+
+/* ---- Footer ---- */
+
+.FooterContainer {
+  margin-top: 120px;
+  margin-bottom: 64px;
+}
+
+/* ---- Responsive ---- */
+
+@media only screen and (max-width: 420px) {
+  .CenterContainer {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .TitleA,
+  .TitleB {
+    font-size: 40px;
+    line-height: 52px;
+  }
+
+  .TitleA {
+    padding-top: 20vh;
+  }
+
+  .ScrollIndicator {
+    visibility: hidden;
+  }
+
+  .ProjectsGroup {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 24px;
+    margin-top: 32px;
+  }
+
+  .Description {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .FooterContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 64px;
+    margin-bottom: 24px;
+  }
+
+  .FooterContainer > .Link {
+    padding: 8px 0px;
+  }
+
+  .Link {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@media only screen and (min-width: 420px) and (max-width: 768px) {
+  .CenterContainer {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  .TitleA,
+  .TitleB {
+    font-size: 56px;
+    line-height: 72.8px;
+  }
+
+  .TitleA {
+    padding-top: 20vh;
+  }
+
+  .ProjectsGroup {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 32px;
+    margin-top: 40px;
+  }
+
+  .Description {
+    width: 80%;
+    /* font-size: 19px; */
+    /* line-height: 24px; */
+  }
+
+  .FooterContainer {
+    margin-top: 64px;
+    margin-bottom: 32px;
+  }
+}
